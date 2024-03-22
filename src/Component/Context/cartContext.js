@@ -56,11 +56,11 @@ function updateCart(id , count) {
 }
 
 function checkOutPayment(id , data) {
-   
+
    let body = {
     shippingAddress:data
    }
-    return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=http://localhost:3000` ,body, { headers : {
+    return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=${window.location.origin}` ,body, { headers : {
         token : localStorage.getItem("userToken")
     }})
 }
